@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { Video } from '../models/search.interface';
 
 @Component({
@@ -10,8 +10,14 @@ export class SearchListComponent implements OnInit {
 
   @Input() videos: Video[];
 
+  @Output() selectVideoEvent = new EventEmitter<Video>();
+
   constructor() { }
 
   ngOnInit() {
+  }
+
+  selectVideo(video: Video){
+    this.selectVideoEvent.emit(video);
   }
 }

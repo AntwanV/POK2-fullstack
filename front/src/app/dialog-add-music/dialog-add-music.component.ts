@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Observable } from 'rxjs';
+import { Video } from '../models/search.interface';
 import { MusicService } from '../services/music.service';
 
 @Component({
@@ -18,6 +19,9 @@ export class DialogAddMusicComponent implements OnInit {
   addMusicForm!: FormGroup;
   newMusicPreview$!: Observable<any>;
   
+  selectedVideo: boolean = false;
+  
+  YtMusic: any = {};
 
   ngOnInit(): void {
     this.addMusicForm = this.formBuilder.group({
@@ -38,6 +42,26 @@ export class DialogAddMusicComponent implements OnInit {
         console.log('HTTP Error', err);
       }
     )
+  }
+  onSubmitYt(){
+    this.musicService.addMusic(this.YtMusic).subscribe(
+      data => {
+        console.log(data)
+      },
+      err => {
+        console.log('HTTP Error', err);
+      }
+    )
+  }
+
+  selectVideo(e: Video){
+    this.selectedVideo = true;
+    this.YtMusic.title = e.title
+    this.YtMusic.author = e.channelTitle
+    this.YtMusic.genre = ""
+    this.YtMusic.description = e.description;
+    console.log(this.YtMusic);
+
   }
 
 }

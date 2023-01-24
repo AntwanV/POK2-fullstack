@@ -24,12 +24,18 @@
             Ajouter
         </button>
     </form>
-    <button mat-raised-button color="warn">Ajouter avec Youtube</button>
-    <app-search-container></app-search-container>
     <div *ngIf="newMusicPreview$ | async as music">
         <h2>{{ music.title | uppercase }}</h2>
         <p>{{ music.author }}</p>
         <p>{{ music.genre }}</p>
         <p>{{ music.description}}</p>
-    </div>    
+    </div>
+    <div *ngIf="selectedVideo">
+        <h2>{{ YtMusic?.title | uppercase }}</h2>
+        <p>{{ YtMusic?.author }}</p>
+        <p>{{ YtMusic?.genre }}</p>
+        <p>{{ YtMusic?.description}}</p>
+    </div>
+    <button mat-raised-button color="warn" (click)="onSubmitYt()">Ajouter avec Youtube</button>
+    <app-search-container (selectVideoEvent)="selectVideo($event)"></app-search-container>    
 </mat-dialog-content>

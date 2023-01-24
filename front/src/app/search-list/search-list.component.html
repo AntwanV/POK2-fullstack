@@ -1,5 +1,5 @@
 <div class="ui four column grid">
-    <div class="column" *ngFor="let video of videos">
+    <div class="column" *ngFor="let video of videos" (click)="selectVideo(video)">
       <div class="ui card">
         <div class="image">
           <img [src]="video.thumbnail">
@@ -13,7 +13,7 @@
             <span class="ui right floated date" style="font-weight: bolder;">{{ video.publishedAt | date:'mediumDate' }}</span>
           </div>
           <div class="description">
-            {{ video.description?.slice(0,50) }}...
+            {{ video.description.slice(0,50) }}...
           </div>
         </div>
       </div>

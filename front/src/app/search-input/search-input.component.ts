@@ -5,7 +5,7 @@ import { debounceTime, pluck, distinctUntilChanged, filter, map } from 'rxjs/ope
 @Component({
   selector: 'app-search-input',
   templateUrl: './search-input.component.html',
-  styleUrls: ['./search-input.component.css']
+  styleUrls: ['./search-input.component.scss']
 })
 export class SearchInputComponent implements AfterViewInit {
 

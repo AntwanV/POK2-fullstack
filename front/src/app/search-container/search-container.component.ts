@@ -1,17 +1,19 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
 import { SearchService } from '../services/search.service';
 import { Video } from '../models/search.interface';
 
 @Component({
   selector: 'app-search-container',
   templateUrl: './search-container.component.html',
-  styleUrls: ['./search-container.component.css']
+  styleUrls: ['./search-container.component.scss']
 })
 export class SearchContainerComponent {
 
   inputTouched = false;
   loading = false;
   videos: Video[] = [];
+
+  @Output() selectVideoEvent = new EventEmitter<Video>();
 
   constructor(private searchService: SearchService) { }
 
@@ -35,5 +37,9 @@ export class SearchContainerComponent {
         this.inputTouched = true;
         this.loading = false;
       });
+  }
+
+  selectVideo(video: Video){
+    this.selectVideoEvent.emit(video);
   }
 }

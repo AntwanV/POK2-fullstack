@@ -9,5 +9,5 @@
     <div *ngIf="loading" style="margin: 3rem;">
       <div class="ui active centered inline loader"></div>
     </div>
-    <app-search-list *ngIf="!loading" [videos]="videos"></app-search-list>
+    <app-search-list *ngIf="!loading" [videos]="videos" (selectVideoEvent)="selectVideo($event)"></app-search-list>
   </div>
