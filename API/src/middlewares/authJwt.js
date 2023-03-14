@@ -1,9 +1,8 @@
 import pkg from 'jsonwebtoken';
-const { jsonwebtoken } = pkg;
+const  jsonwebtoken  = pkg;
 import { secret } from '../../config/auth.config.js';
 import db from "../models/index.js"; 
 
-secret
 const User = db.user;
 const Role = db.role;
 

@@ -1,18 +1,19 @@
-import { secret } from "../config/auth.config";
+import { secret } from "../../config/auth.config.js";
 import db from "../models/index.js";
 const User = db.user;
 const Role = db.role;
 
-import pkg from 'jsonwebtoken';
-const { jsonwebtoken } = pkg;
+import pkgs from 'jsonwebtoken';
+const  jsonwebtoken  = pkgs;
+
 import pkg from 'bcryptjs';
-const { bcryptjs } = pkg;
+const bcryptjs = pkg;
 
 export function signup(req, res) {
   const user = new User({
     username: req.body.username,
     email: req.body.email,
-    password: hashSync(req.body.password, 8),
+    password: bcryptjs.hashSync(req.body.password, 8),
   });
 
   user.save((err, user) => {

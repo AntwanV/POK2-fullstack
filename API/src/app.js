@@ -5,6 +5,9 @@ import cors from 'cors';
 import cookieSession from 'cookie-session';
 import { mongoose } from 'mongoose';
 import db from './models/index.js';
+import { userRoutes } from './routes/user.routes.js';
+import { authRoutes } from './routes/auth.routes.js';
+
 
 const app = express();
 
@@ -98,6 +101,9 @@ app.post('/api/newMusic', function(req, res){
     if (err) throw err
   });
 });
+
+userRoutes(app);
+authRoutes(app);
 
 function initial() {
   Role.estimatedDocumentCount((err, count) => {
