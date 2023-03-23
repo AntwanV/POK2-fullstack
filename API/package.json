@@ -6,7 +6,7 @@
   "main": "src/server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node ./dist/app.js",
+    "start": "nodemon serve",
     "tsc": "tsc",
     "postinstall": "npm run tsc",
     "dev": "ts-node-dev — respawn — pretty — transpile-only app.js"

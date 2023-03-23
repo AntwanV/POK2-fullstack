@@ -15,12 +15,12 @@ export class MusicService {
     ) { }
 
     getMusics() {
-        const route = `http://localhost:3000/api/musics`;
+        const route = `http://node.origan.ovh1.ec-m.fr:8080/api/musics`;
         return this.http.get<Music[]>(route);
     }
 
     addMusic(newMusic: Partial<Music>) {
-        const route = `http://localhost:3000/api/newMusic`;
+        const route = `http://node.origan.ovh1.ec-m.fr:8080/api/newMusic`;
         return this.http.post<any>(route, newMusic);
     }
 }
