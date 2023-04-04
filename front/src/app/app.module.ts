@@ -24,6 +24,8 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { SearchInputComponent } from './search-input/search-input.component';
 import { SearchListComponent } from './search-list/search-list.component';
 import { SearchContainerComponent } from './search-container/search-container.component';
+import { SignUpComponent } from './sign-up/sign-up.component';
+import { SignInComponent } from './sign-in/sign-in.component';
 
 @NgModule({
   declarations: [
@@ -35,6 +37,8 @@ import { SearchContainerComponent } from './search-container/search-container.co
     SearchInputComponent,
     SearchListComponent,
     SearchContainerComponent,
+    SignUpComponent,
+    SignInComponent,
   ],
   imports: [
     BrowserModule,
