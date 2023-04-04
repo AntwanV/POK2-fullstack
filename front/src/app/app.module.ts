@@ -22,6 +22,11 @@ import { HttpClientModule } from '@angular/common/http';
 import { DialogAddMusicComponent } from './dialog-add-music/dialog-add-music.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { MusicCardComponent } from './music-card/music-card.component';
+import { SearchInputComponent } from './search-input/search-input.component';
+import { SearchListComponent } from './search-list/search-list.component';
+import { SearchContainerComponent } from './search-container/search-container.component';
+import { SignUpComponent } from './sign-up/sign-up.component';
+import { SignInComponent } from './sign-in/sign-in.component';
 
 @NgModule({
   declarations: [
@@ -31,6 +36,11 @@ import { MusicCardComponent } from './music-card/music-card.component';
     FeedComponent,
     DialogAddMusicComponent,
     MusicCardComponent,
+    SearchInputComponent,
+    SearchListComponent,
+    SearchContainerComponent,
+    SignUpComponent,
+    SignInComponent,
   ],
   imports: [
     BrowserModule,

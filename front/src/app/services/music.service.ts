@@ -21,7 +21,7 @@ export class MusicService {
 
     addMusic(newMusic: Partial<Music>) {
         const route = `http://localhost:3000/api/newMusic`;
-        return this.http.post<any>(route, newMusic).subscribe(data => console.log(data));
+        return this.http.post<any>(route, newMusic);
     }
 
     addLike(musicId: string){
