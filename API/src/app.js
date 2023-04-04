@@ -102,6 +102,11 @@ app.post('/api/newMusic', function(req, res){
   });
 });
 
+app.put('/api/newLike', function(req, res){
+  console.log('reareaz');
+  Music.findByIdAndUpdate(req.body._id, {likes: 45});
+})
+
 userRoutes(app);
 authRoutes(app);
 
