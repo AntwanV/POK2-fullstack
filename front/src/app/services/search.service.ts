@@ -3,6 +3,7 @@ import { HttpClient } from '@angular/common/http';
 
 import { map } from 'rxjs/operators';
 import { Observable } from 'rxjs';
+import { environment } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root'
@@ -10,7 +11,7 @@ import { Observable } from 'rxjs';
 export class SearchService {
 
   private API_URL = 'https://www.googleapis.com/youtube/v3/search';
-  private API_TOKEN = 'AIzaSyD5MbCQyfIAOJfEil-_-VZNYMmIHQ9mefQ';
+  private API_TOKEN = environment.API_TOKEN;
 
   constructor(private http: HttpClient) {}
 

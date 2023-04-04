@@ -4,7 +4,8 @@
 
 export const environment = {
   production: false,
-  apiUrl: '/api/'
+  apiUrl: '/api/',
+  API_TOKEN: 'AIzaSyD5MbCQyfIAOJfEil-_-VZNYMmIHQ9mefQ',
 };
 
 /*
