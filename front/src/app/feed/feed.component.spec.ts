@@ -1,6 +1,7 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-
+import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { FeedComponent } from './feed.component';
+import { MatDialogModule } from '@angular/material/dialog';
 
 describe('FeedComponent', () => {
   let component: FeedComponent;
@@ -8,7 +9,8 @@ describe('FeedComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ FeedComponent ]
+      declarations: [ FeedComponent ],
+      imports: [HttpClientTestingModule, MatDialogModule],
     })
     .compileComponents();
 
