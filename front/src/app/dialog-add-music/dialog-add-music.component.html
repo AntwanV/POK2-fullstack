@@ -1,31 +1,41 @@
-<form [formGroup]="addMusicForm">
-    <mat-form-field appearance="fill">
-        <mat-label>Titre</mat-label>
-        <input matInput formControlName="title">
-    </mat-form-field>
-    <mat-form-field appearance="fill">
-        <mat-label>Auteur</mat-label>
-        <input matInput formControlName="author">
-    </mat-form-field>
-    <mat-form-field appearance="fill">
-        <mat-label>Genre</mat-label>
-        <mat-select formControlName="genre">
-            <mat-option value="Rap">Rap</mat-option>
-            <mat-option value="Rock">Rock</mat-option>
-            <mat-option value="Funk">Funk</mat-option>
-        </mat-select>
-    </mat-form-field>
-    <mat-form-field appearance="fill">
-        <mat-label>Description</mat-label>
-        <input matInput formControlName="description">
-    </mat-form-field>
-    <button type="submit" mat-raised-button color="primary" (click)="onSubmit()" mat-dialog-close>
-        Ajouter
-    </button>
-</form>
-<div *ngIf="newMusicPreview$ | async as music">
-    <h2>{{ music.title | uppercase }}</h2>
-    <p>{{ music.author }}</p>
-    <p>{{ music.genre }}</p>
-    <p>{{ music.description}}</p>
-</div>
+<mat-dialog-content>
+    <form [formGroup]="addMusicForm">
+        <mat-form-field appearance="fill">
+            <mat-label>Titre</mat-label>
+            <input matInput formControlName="title">
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+            <mat-label>Auteur</mat-label>
+            <input matInput formControlName="author">
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+            <mat-label>Genre</mat-label>
+            <mat-select formControlName="genre">
+                <mat-option value="Rap">Rap</mat-option>
+                <mat-option value="Rock">Rock</mat-option>
+                <mat-option value="Funk">Funk</mat-option>
+            </mat-select>
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+            <mat-label>Description</mat-label>
+            <input matInput formControlName="description">
+        </mat-form-field>
+        <button type="submit" mat-raised-button color="primary" (click)="onSubmit()" mat-dialog-close>
+            Ajouter
+        </button>
+    </form>
+    <div *ngIf="newMusicPreview$ | async as music">
+        <h2>{{ music.title | uppercase }}</h2>
+        <p>{{ music.author }}</p>
+        <p>{{ music.genre }}</p>
+        <p>{{ music.description}}</p>
+    </div>
+    <div *ngIf="selectedVideo">
+        <h2>{{ YtMusic?.title | uppercase }}</h2>
+        <p>{{ YtMusic?.author }}</p>
+        <p>{{ YtMusic?.genre }}</p>
+        <p>{{ YtMusic?.description}}</p>
+    </div>
+    <button mat-raised-button color="warn" (click)="onSubmitYt()">Ajouter avec Youtube</button>
+    <app-search-container (selectVideoEvent)="selectVideo($event)"></app-search-container>    
+</mat-dialog-content>

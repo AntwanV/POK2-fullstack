@@ -21,6 +21,9 @@ import { FeedComponent } from './feed/feed.component';
 import { HttpClientModule } from '@angular/common/http';
 import { DialogAddMusicComponent } from './dialog-add-music/dialog-add-music.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { SearchInputComponent } from './search-input/search-input.component';
+import { SearchListComponent } from './search-list/search-list.component';
+import { SearchContainerComponent } from './search-container/search-container.component';
 import { SignUpComponent } from './sign-up/sign-up.component';
 import { SignInComponent } from './sign-in/sign-in.component';
 
@@ -31,6 +34,9 @@ import { SignInComponent } from './sign-in/sign-in.component';
     ProfileComponent,
     FeedComponent,
     DialogAddMusicComponent,
+    SearchInputComponent,
+    SearchListComponent,
+    SearchContainerComponent,
     SignUpComponent,
     SignInComponent,
   ],
